@@ -1,9 +1,9 @@
 <?php
 
-set_include_path(get_include_path() . PATH_SEPARATOR . Bundle::path('zend').'libraries');
+$lib_path = Bundle::path('zend').'libraries';
+
+set_include_path(get_include_path() . PATH_SEPARATOR . $lib_path);
 
 Autoloader::underscored(array(
-    'Zend' => Bundle::path('zend').'libraries/Zend',
+    'Zend' => $lib_path . '/Zend',
 ));
-
-
